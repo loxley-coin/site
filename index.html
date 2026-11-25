@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LOXLEY — A Proclamation of Presale</title>
+<meta name="description" content="A proclamation nailed to the greenwood tree: the LOXLEY (LOX) presale on Robinhood Chain. One billion coins struck, four hundred million offered at a fixt rate.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=IM+Fell+English:ital@0;1&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#221a11;
+    --ink-soft:#3d2f1e;
+    --paper:#ead9b4;
+    --paper-dim:#e0cda0;
+    --paper-slip:#f0e3c0;
+    --seal:#8e2321;
+    --seal-dark:#6d1715;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{background:#171410;}
+  body{
+    font-family:"IM Fell English", "Iowan Old Style", Georgia, serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1100px 500px at 50% -80px, #26211a 0%, #171410 60%),
+      #171410;
+    min-height:100vh;
+    padding:38px 14px 54px;
+  }
+
+  /* ===== the nailed-up sheet ===== */
+  .sheet-frame{
+    max-width:1060px; margin:0 auto;
+    transform:rotate(-.45deg);
+    filter:drop-shadow(16px 20px 0 rgba(0,0,0,.42));
+  }
+  .sheet{
+    position:relative;
+    background:
+      radial-gradient(340px 190px at 88% 6%, rgba(120,78,28,.20), rgba(120,78,28,0) 70%),
+      radial-gradient(260px 300px at 4% 64%, rgba(120,78,28,.13), rgba(120,78,28,0) 70%),
+      radial-gradient(150px 110px at 62% 96%, rgba(96,60,20,.16), rgba(96,60,20,0) 70%),
+      var(--paper);
+    padding:52px 56px 42px;
+    clip-path:polygon(
+      0.6% 1.2%, 8% 0.3%, 21% 0.9%, 36% 0.2%, 52% 0.8%, 67% 0.25%, 81% 0.9%, 93% 0.35%, 99.4% 1.4%,
+      99.7% 14%, 99.2% 29%, 99.8% 46%, 99.3% 63%, 99.7% 79%, 99.25% 93%, 99.5% 98.6%,
+      91% 99.5%, 76% 99.1%, 60% 99.7%, 44% 99.15%, 29% 99.6%, 15% 99.2%, 4% 99.6%, 0.5% 98.7%,
+      0.25% 86%, 0.7% 71%, 0.2% 55%, 0.65% 39%, 0.3% 24%, 0.6% 10%);
+  }
+  .sheet::before{ /* paper grain, printed uneven */
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.5; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0.13 0 0 0 0 0.09 0 0 0 0 0.04 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .sheet::after{ /* foxing spots */
+    content:""; position:absolute; inset:0; pointer-events:none; opacity:.35; mix-blend-mode:multiply;
+    background:
+      radial-gradient(7px 5px at 12% 22%, rgba(110,70,25,.5), rgba(110,70,25,0) 70%),
+      radial-gradient(5px 4px at 84% 41%, rgba(110,70,25,.5), rgba(110,70,25,0) 70%),
+      radial-gradient(9px 6px at 71% 83%, rgba(110,70,25,.45), rgba(110,70,25,0) 70%),
+      radial-gradient(4px 4px at 33% 91%, rgba(110,70,25,.5), rgba(110,70,25,0) 70%),
+      radial-gradient(5px 5px at 95% 72%, rgba(110,70,25,.5), rgba(110,70,25,0) 70%);
+  }
+  .sheet > *{position:relative; z-index:1;}
+  .nail{position:absolute; width:17px; height:17px; border-radius:50%; z-index:3;
+    background:radial-gradient(circle at 35% 32%, #cbb27a, #7a5c22 58%, #42300f);
+    box-shadow:0 2px 3px rgba(30,18,4,.55);}
+  .nail.tl{top:16px; left:20px;} .nail.tr{top:13px; right:24px;}
+
+  /* ===== masthead ===== */
+  .over-line{
+    font-family:"IM Fell English SC", serif; text-align:center;
+    font-size:15px; letter-spacing:.34em; color:var(--ink-soft); text-transform:uppercase;
+  }
+  .over-line .dot{color:var(--seal);}
+  h1.masthead{
+    font-family:"Pirata One", "IM Fell English SC", serif;
+    font-size:clamp(74px, 14.5vw, 148px); line-height:.94; text-align:center;
+    letter-spacing:.015em; color:var(--ink);
+    transform:rotate(-1.1deg);
+    text-shadow:2.5px 2.5px 0 rgba(142,35,33,.28);
+    margin:8px 0 2px;
+  }
+  .sub-line{
+    text-align:center; font-family:"IM Fell English SC", serif;
+    font-size:clamp(17px, 3vw, 23px); letter-spacing:.06em;
+  }
+  .sub-line em{font-family:"IM Fell English", serif; letter-spacing:0;}
+  .rule-carved{
+    height:0; border-top:3px solid var(--ink); border-bottom:1px solid var(--ink);
+    padding-top:2px; margin:20px 4px 0;
+  }
+  #beam{transform-origin:50% 50%; transition:transform 1.2s ease;}
+  .rule-thin{border-top:1.5px solid var(--ink); margin:3px 4px 0; opacity:.85;}
+
+  /* ===== body columns (deliberately uneven) ===== */
+  .cols{display:grid; grid-template-columns:7fr 5fr; gap:40px; margin-top:26px; align-items:start;}
+  @media (max-width:860px){ .cols{grid-template-columns:1fr;} .sheet{padding:38px 22px 30px;} }
+
+  .decree{font-size:17.5px; line-height:1.52; text-align:justify; hyphens:auto;}
+  .decree p + p{margin-top:12px;}
+  .decree .dropcap{
+    float:left; font-family:"Pirata One", serif; font-size:58px; line-height:.78;
+    padding:6px 8px 0 0; color:var(--seal-dark);
+  }
+  .decree b{font-family:"IM Fell English SC", serif; font-weight:normal; letter-spacing:.02em;}
+
+  figure.cut{margin:22px 0 4px; transform:rotate(.7deg);}
+  figure.cut img{
+    display:block; width:100%; max-width:430px; height:auto;
+    border:3px solid var(--ink); outline:1px solid rgba(34,26,17,.5); outline-offset:4px;
+    mix-blend-mode:multiply;
+  }
+  figure.cut figcaption{
+    font-style:italic; font-size:14.5px; color:var(--ink-soft); margin-top:9px; max-width:430px;
+  }
+
+  /* ===== hours of the stall (countdown) ===== */
+  .hours{
+    border:2.5px solid var(--ink); padding:18px 18px 14px; position:relative;
+    background:rgba(255,250,235,.25); transform:rotate(.5deg);
+  }
+  .hours::before{content:""; position:absolute; inset:5px; border:1px solid rgba(34,26,17,.55); pointer-events:none;}
+  .hours h3, .ledger h3{
+    font-family:"IM Fell English SC", serif; font-weight:normal;
+    font-size:20px; letter-spacing:.08em; text-align:center;
+  }
+  .hours .label{
+    text-align:center; font-variant:small-caps; letter-spacing:.14em;
+    font-size:14.5px; color:var(--ink-soft); margin-top:10px;
+  }
+  .hours .time{
+    text-align:center; font-family:"Pirata One", serif;
+    font-size:clamp(38px, 6vw, 52px); line-height:1.05; color:var(--seal-dark);
+    letter-spacing:.03em; margin:2px 0;
+  }
+  .hours .phase{font-style:italic; text-align:center; font-size:15.5px; line-height:1.4;}
+  .date-stamp{
+    display:inline-block; margin-top:12px; padding:2px 10px;
+    border:2px solid var(--seal); color:var(--seal);
+    font-family:"IM Fell English SC", serif; letter-spacing:.22em; font-size:13.5px;
+    transform:rotate(-2.4deg); opacity:.85; mix-blend-mode:multiply;
+  }
+  .hours .stamp-row{text-align:center;}
+
+  /* ===== round stamp ===== */
+  .stamp{
+    position:absolute; width:138px; height:138px; z-index:4;
+    right:34px; top:118px; transform:rotate(-13deg);
+    opacity:.85; mix-blend-mode:multiply; pointer-events:none;
+  }
+  @media (max-width:860px){ .stamp{width:104px; height:104px; right:8px; top:96px;} }
+
+  /* ===== thy ledger (wallet) ===== */
+  .ledger{margin-top:26px; border-top:2px solid var(--ink); padding-top:14px;}
+  .ledger dl{margin-top:10px; font-size:16px;}
+  .ledger .lrow{
+    display:flex; justify-content:space-between; gap:14px; padding:4px 0;
+    border-bottom:1.5px dotted rgba(34,26,17,.55);
+  }
+  .ledger dt{font-variant:small-caps; letter-spacing:.1em; color:var(--ink-soft);}
+  .ledger dd{font-weight:bold; text-align:right; word-break:break-all;}
+  .ledger .btn{width:100%; margin-top:10px;}
+
+  /* ===== buttons: struck like type, pressed hard ===== */
+  .btn{
+    font-family:"IM Fell English SC", serif; font-size:17px; letter-spacing:.05em;
+    cursor:pointer; padding:10px 20px; color:var(--paper-slip);
+    background:var(--ink); border:2px solid var(--ink);
+    box-shadow:3px 3px 0 rgba(34,26,17,.4);
+    transition:transform .05s ease, box-shadow .05s ease;
+  }
+  .btn:active{transform:translate(2px,2px); box-shadow:1px 1px 0 rgba(34,26,17,.4);}
+  .btn:disabled{opacity:.38; cursor:not-allowed;}
+  .btn.gold{background:var(--seal); border-color:var(--seal-dark); color:#f6e8c8;}
+  .btn.red{background:transparent; color:var(--ink);}
+
+  .msg{margin-top:9px; font-size:15px; min-height:20px; font-style:italic;}
+  .msg.ok{color:#3c5a24;} .msg.err{color:var(--seal-dark);}
+
+  /* ===== the buy slip: a torn ledger page ===== */
+  .slip-frame{filter:drop-shadow(7px 9px 0 rgba(34,26,17,.28)); margin-top:38px;}
+  .slip{
+    position:relative; background:var(--paper-slip);
+    transform:rotate(.55deg);
+    padding:26px 30px 22px;
+    clip-path:polygon(
+      0.4% 3%, 6% 0.6%, 19% 2.2%, 34% 0.5%, 50% 2%, 66% 0.7%, 82% 2.1%, 94% 0.8%, 99.6% 3.5%,
+      99.8% 30%, 99.3% 55%, 99.7% 80%, 99.4% 96.5%,
+      88% 99.3%, 70% 98.2%, 52% 99.5%, 35% 98.4%, 18% 99.4%, 5% 98.3%, 0.5% 96.8%,
+      0.2% 74%, 0.6% 48%, 0.25% 22%);
+  }
+  .slip h2{
+    font-family:"IM Fell English SC", serif; font-weight:normal;
+    font-size:clamp(23px, 4vw, 30px); letter-spacing:.04em;
+  }
+  .slip h2 .no{color:var(--seal-dark);}
+  .slip .sub{font-style:italic; color:var(--ink-soft); font-size:16px; margin:3px 0 16px;}
+  .slip .sub b{color:var(--ink); font-style:normal;}
+  .formline{margin-top:14px;}
+  .formline label{
+    display:block; font-variant:small-caps; letter-spacing:.16em;
+    font-size:14px; color:var(--ink-soft); margin-bottom:2px;
+  }
+  .buy-row{display:flex; gap:16px; flex-wrap:wrap; align-items:flex-end;}
+  .buy-row input{
+    flex:1 1 170px; font-family:"IM Fell English", serif; font-style:italic;
+    font-size:24px; color:var(--ink); background:transparent;
+    border:0; border-bottom:2.5px dotted var(--ink); border-radius:0;
+    padding:2px 4px 4px; outline:none;
+  }
+  .buy-row input:focus{border-bottom-style:solid;}
+  .gets{margin-top:12px; font-size:18px;}
+  .gets b{font-family:"IM Fell English SC", serif; font-weight:normal; font-size:20px;}
+  .gets .fill-line{border-bottom:2.5px dotted var(--ink); padding:0 10px;}
+  .fineprint{font-size:14px; font-style:italic; color:var(--ink-soft); margin-top:10px; line-height:1.45;}
+  .claim-row{margin-top:16px; border-top:1.5px solid rgba(34,26,17,.5); padding-top:14px;}
+
+  /* ===== the printed ruler (progress) ===== */
+  .takings{margin-top:34px;}
+  .takings h3{
+    font-family:"IM Fell English SC", serif; font-weight:normal;
+    font-size:21px; letter-spacing:.06em;
+  }
+  .takings .rowline{display:flex; justify-content:space-between; align-items:baseline; gap:12px; flex-wrap:wrap;}
+  .takings .amt{font-size:17px;}
+  .takings .amt b{color:var(--seal-dark); font-size:19px;}
+  .ruler{
+    margin-top:10px; border-top:2.5px solid var(--ink); border-bottom:2.5px solid var(--ink);
+    padding:0 0 7px;
+    background:
+      repeating-linear-gradient(90deg, var(--ink) 0 2px, transparent 2px 25%) left top / 100% 15px no-repeat,
+      repeating-linear-gradient(90deg, rgba(34,26,17,.65) 0 1px, transparent 1px 5%) left top / 100% 8px no-repeat;
+  }
+  .ruler .track{margin-top:19px; height:15px; position:relative;}
+  #meterFill{
+    height:100%; width:0%;
+    background:repeating-linear-gradient(45deg, rgba(34,26,17,.92) 0 5px, rgba(34,26,17,.30) 5px, rgba(34,26,17,.30) 10px);
+    border-right:4px solid var(--seal);
+    transition:width .9s ease;
+  }
+  .ruler-nums{
+    display:flex; justify-content:space-between; margin-top:5px;
+    font-family:"IM Fell English SC", serif; font-size:14.5px; letter-spacing:.08em;
+  }
+  .scale-cap{font-style:italic; color:var(--ink-soft); font-size:15px; margin-top:6px;}
+  .pct-line{font-variant:small-caps; letter-spacing:.1em; font-size:14.5px; color:var(--ink-soft);}
+
+  /* ===== how + plaque ===== */
+  .cols2{display:grid; grid-template-columns:6fr 5fr; gap:40px; margin-top:36px; align-items:start;}
+  @media (max-width:860px){ .cols2{grid-template-columns:1fr;} }
+  .how h3, .plaque h3{
+    font-family:"IM Fell English SC", serif; font-weight:normal;
+    font-size:21px; letter-spacing:.06em; margin-bottom:10px;
+  }
+  .how ol{list-style:none; counter-reset:step;}
+  .how li{
+    counter-increment:step; font-size:16.5px; line-height:1.5;
+    padding:8px 0 8px 44px; position:relative;
+    border-bottom:1.5px dotted rgba(34,26,17,.5);
+  }
+  .how li:last-child{border-bottom:0;}
+  .how li::before{
+    content:counter(step, upper-roman) ".";
+    position:absolute; left:0; top:8px;
+    font-family:"IM Fell English SC", serif; color:var(--seal-dark); font-size:17px;
+  }
+  .how p{font-size:16.5px; line-height:1.5; margin-top:10px;}
+  .plaque{position:relative; border:2.5px solid var(--ink); padding:18px 18px 16px; background:rgba(255,250,235,.22);}
+  .plaque::before{content:""; position:absolute; inset:5px; border:1px solid rgba(34,26,17,.55); pointer-events:none;}
+  .plaque p{font-variant:small-caps; letter-spacing:.12em; font-size:14px; color:var(--ink-soft);}
+  .addr{
+    font-size:13px; word-break:break-all; line-height:1.45; margin:3px 0 12px;
+    border-bottom:2px dotted var(--ink); padding-bottom:5px;
+  }
+  .plaque .btn{width:100%;}
+  .wax{
+    position:absolute; right:-20px; bottom:-20px; width:74px; height:74px; z-index:3;
+    background:radial-gradient(circle at 38% 34%, #b0403c, var(--seal) 55%, var(--seal-dark));
+    border-radius:48% 52% 55% 45% / 55% 47% 53% 50%;
+    transform:rotate(11deg);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:inset 0 0 0 3px rgba(246,232,200,.25), 2px 3px 5px rgba(30,10,5,.4);
+  }
+  .wax span{font-family:"Pirata One", serif; font-size:34px; color:#f6e8c8; text-shadow:0 1px 2px rgba(0,0,0,.5);}
+
+  footer{
+    text-align:center; margin-top:44px; padding-top:16px;
+    border-top:1.5px solid var(--ink);
+    font-style:italic; font-size:15px; color:var(--ink-soft);
+  }
+  footer .dns{font-style:normal; font-size:12.5px; letter-spacing:.18em; margin-top:5px; text-transform:uppercase;}
+</style>
+</head>
+<body>
+
+<!-- distress filter for the stamp -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <filter id="distress">
+    <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="3" seed="7" result="n"/>
+    <feDisplacementMap in="SourceGraphic" in2="n" scale="4"/>
+  </filter>
+</svg>
+
+<div class="sheet-frame">
+  <div class="sheet">
+    <div class="nail tl"></div><div class="nail tr"></div>
+
+    <svg class="stamp" viewBox="0 0 140 140" aria-hidden="true">
+      <g filter="url(#distress)" fill="none" stroke="#8e2321">
+        <circle cx="70" cy="70" r="66" stroke-width="3"/>
+        <circle cx="70" cy="70" r="41" stroke-width="1.6"/>
+      </g>
+      <defs><path id="stampArc" d="M70,70 m-53.5,0 a53.5,53.5 0 1,1 107,0 a53.5,53.5 0 1,1 -107,0"/></defs>
+      <text font-family="IM Fell English SC, serif" font-size="15.5" letter-spacing="4.5" fill="#8e2321" filter="url(#distress)">
+        <textPath href="#stampArc">SHERWOOD FAIR · BY THE GREENWOOD ·</textPath>
+      </text>
+      <text x="70" y="82" text-anchor="middle" font-family="Pirata One, serif" font-size="36" fill="#8e2321" filter="url(#distress)">L</text>
+    </svg>
+
+    <p class="over-line">By Proclamation <span class="dot">·</span> Nail'd to the Greenwood Tree <span class="dot">·</span> For All to Read</p>
+    <h1 class="masthead">LOXLEY</h1>
+    <p class="sub-line">A Fair &amp; Open Presale of the Coin call'd <em>LOX</em>,<br>upon Robinhood Chain, at one fixt price for shepherd &amp; sheriff alike.</p>
+
+    <div class="rule-carved" id="beam"></div>
+    <div class="rule-thin"></div>
+
+    <div class="cols">
+      <div>
+        <div class="decree">
+          <p><span class="dropcap">W</span>hereas one billion LOX have been struck under the greenwood tree, it is hereby made known that <b>four hundred million</b> of them are offer'd for sale at this fair, at the rate of <b>one Ether for two hundred million LOX</b> — neither more nor less, no haggling, no sliding scales, the same reckoning for every purse that comes to the counter.</p>
+          <p>Let no man say he was not told. What is paid is chalk'd upon the stall ledger in the open, and when the fair is done &amp; claims are open'd, each man collects the coin that bears his name.</p>
+        </div>
+        <figure class="cut">
+          <img src="woodcut-fox.png" alt="A woodcut of the Fox of Sherwood, hooded, with longbow and quiver">
+          <figcaption>The Fox of Sherwood, cut in wood &amp; printed by hand. He keeps the ledger, and his chalk does not lie.</figcaption>
+        </figure>
+      </div>
+
+      <div>
+        <section class="hours">
+          <h3>The Keeping of Hours</h3>
+          <div class="label" id="clockLabel">The fair bell rings in</div>
+          <div class="time" id="clockTime">—</div>
+          <div class="phase" id="clockPhase">The stall is being built. Come back when the bell rings.</div>
+          <div class="stamp-row"><span class="date-stamp">Nov · MMXXVI</span></div>
+        </section>
+
+        <section class="ledger">
+          <h3>Thy Own Line in the Ledger</h3>
+          <dl>
+            <div class="lrow"><dt>Wallet</dt><dd id="ledWallet">not connected</dd></div>
+            <div class="lrow"><dt>Thou hast paid</dt><dd id="ledPaid">—</dd></div>
+            <div class="lrow"><dt>Thy LOX</dt><dd id="ledAlloc">—</dd></div>
+            <div class="lrow"><dt>Collected</dt><dd id="ledClaimed">—</dd></div>
+          </dl>
+          <button class="btn" id="connectBtn">Connect Wallet</button>
+          <button class="btn red" id="wcBtn">WalletConnect</button>
+          <div class="msg" id="ledMsg"></div>
+        </section>
+      </div>
+    </div>
+
+    <!-- ============ THE BUY SLIP ============ -->
+    <div class="slip-frame">
+      <section class="slip">
+        <h2>The Stall-Keeper's Ledger <span class="no">— No. 1</span></h2>
+        <p class="sub">Fixed rate, weigh'd in the open: <b>1 ETH = 200,000,000 LOX</b>.</p>
+
+        <div class="formline">
+          <label for="ethInput">ETH laid upon the counter</label>
+          <div class="buy-row">
+            <input id="ethInput" type="text" inputmode="decimal" placeholder="0.05" autocomplete="off">
+            <button class="btn" id="buyBtn" disabled>Buy LOX</button>
+          </div>
+        </div>
+        <div class="gets">Thou receivest: <span class="fill-line"><b id="loxOut">0 LOX</b></span></div>
+        <p class="fineprint">Between 0.005 and 0.2 ETH per purse. Thy coin is chalk'd on the stall ledger the moment thou payest; collect it from this same stall once the fair closes and claims open.</p>
+
+        <div class="claim-row">
+          <button class="btn gold" id="claimBtn" disabled>Collect My LOX</button>
+          <div class="msg" id="stallMsg"></div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ============ THE PRINTED RULER ============ -->
+    <section class="takings">
+      <div class="rowline">
+        <h3>What the Stall Hath Taken</h3>
+        <span class="amt">Raised so far: <b id="raisedNow">—</b> of the 2 ETH stall limit</span>
+      </div>
+      <div class="ruler">
+        <div class="track"><div id="meterFill"></div></div>
+      </div>
+      <div class="ruler-nums"><span>0</span><span>½</span><span>1</span><span>1½</span><span>2 ETH</span></div>
+      <div class="rowline" style="margin-top:6px;">
+        <span class="pct-line" id="raisedPct">—</span>
+        <span class="pct-line" id="buyerCount">Allocation for sale: 400,000,000 LOX</span>
+      </div>
+      <p class="scale-cap" id="scaleCap">The takings are mark'd upon the ruler above, in full view of the fair.</p>
+    </section>
+
+    <div class="cols2">
+      <section class="how">
+        <h3>How a Man May Take Part</h3>
+        <ol>
+          <li><b>Weigh in.</b> While the fair is open, lay ETH on the counter. The stall chalks up thy LOX at the fixt rate, there and then.</li>
+          <li><b>The bell closes the fair.</b> When time runs out — or the 2 ETH stall limit is reach'd — no more coin is sold.</li>
+          <li><b>Collect thy coin.</b> Claims open right after the close. Come back to this stall, press “Collect My LOX”, and the coin moves to thy purse.</li>
+        </ol>
+        <p>Total struck: 1,000,000,000 LOX. This stall sells 400,000,000 of them, and not one coin more.</p>
+      </section>
+
+      <section class="plaque">
+        <h3>Cut upon the Plaque</h3>
+        <p>Token contract</p>
+        <div class="addr" id="tokenAddr">not yet struck</div>
+        <p>Presale stall contract</p>
+        <div class="addr" id="presaleAddr">not yet built</div>
+        <button class="btn gold" id="copyBtn">Copy Stall Address</button>
+        <div class="msg" id="plaqueMsg"></div>
+        <div class="wax" aria-hidden="true"><span>L</span></div>
+      </section>
+    </div>
+
+    <footer>
+      LOXLEY — struck under the greenwood tree, weigh'd at the Sherwood Fair, printed for all to read.
+      <div class="dns">DNS by DNSExit</div>
+    </footer>
+  </div>
+</div>
+
+<script>
+// ---- chain + sale constants ----
+const CHAIN_ID = 4663;
+const CHAIN_HEX = "0x1237";
+const RPC_URL = "https://rpc.mainnet.chain.robinhood.com";
+const EXPLORER = "https://robinhoodchain.blockscout.com";
+const TOKEN_ADDRESS = "0xC76d17286646b96961F6131C236FDFF7baD3591d";
+const PRESALE_ADDRESS = "0x9a2B5a2b6fdB2342bd1bCCfFBCE424BEC7d09338";
+const SALE_START = 1795615200; // 2026-11-25 21:00 WIB (14:00 UTC)
+const SALE_END = 1795874400;   // 2026-11-28 21:00 WIB (14:00 UTC)
+const WC_PROJECT_ID = "ff5985647ed78916bed0155d2ff84a1c";
+const ZERO = "0x0000000000000000000000000000000000000000";
+const RATE = 200000000n;               // whole LOX per 1 ETH
+const HARD_CAP_WEI = 2000000000000000000n;
+const MIN_WEI = 5000000000000000n;     // 0.005 ETH
+const MAX_WEI = 200000000000000000n;   // 0.2 ETH
+const SEL = {
+  totalRaised: "0xc5c4744c", contributed: "0x995c5e9d", claimOpen: "0x4b8bcb58",
+  claimed: "0xc884ef83", allocationOf: "0xa4f82f27", buy: "0xa6f2ae3a", claim: "0x4e71d92d"
+};
+
+const $ = id => document.getElementById(id);
+const deployed = PRESALE_ADDRESS.toLowerCase() !== ZERO && SALE_END > 0;
+let provider = null;   // EIP-1193 provider once connected
+let account = null;
+let sale = { raised: null, claimOpen: false };
+
+// ---- helpers ----
+function padAddr(a){ return a.toLowerCase().replace(/^0x/,"").padStart(64,"0"); }
+function fmtETH(wei){
+  const w = wei / 10n**18n, f = (wei % 10n**18n).toString().padStart(18,"0").slice(0,4).replace(/0+$/,"");
+  return w.toString() + (f ? "." + f : "") + " ETH";
+}
+function fmtLOX(wei){
+  return (wei / 10n**18n).toLocaleString("en-US") + " LOX";
+}
+function parseETH(str){
+  str = (str || "").trim().replace(",", ".");
+  if (!/^\d*(\.\d*)?$/.test(str) || str === "" || str === ".") return null;
+  const [i, f = ""] = str.split(".");
+  if (f.length > 18) return null;
+  return BigInt(i || "0") * 10n**18n + BigInt((f + "0".repeat(18)).slice(0,18));
+}
+async function rpcCall(to, data){
+  try{
+    const r = await fetch(RPC_URL, { method:"POST", headers:{ "Content-Type":"application/json" },
+      body: JSON.stringify({ jsonrpc:"2.0", id:1, method:"eth_call", params:[{ to, data }, "latest"] }) });
+    const j = await r.json();
+    return j.result && j.result !== "0x" ? j.result : null;
+  }catch(e){ return null; }
+}
+function word(hex, i){ return BigInt("0x" + hex.slice(2 + i*64, 2 + (i+1)*64)); }
+function stallMsg(text, ok){
+  const m = $("stallMsg"); m.className = "msg " + (ok ? "ok" : "err"); m.textContent = text;
+}
+
+// ---- sale state (read-only, works without a wallet) ----
+async function refreshSale(){
+  if (!deployed) return;
+  const raised = await rpcCall(PRESALE_ADDRESS, SEL.totalRaised);
+  const open = await rpcCall(PRESALE_ADDRESS, SEL.claimOpen);
+  if (raised) sale.raised = word(raised, 0);
+  if (open) sale.claimOpen = word(open, 0) === 1n;
+  if (sale.raised !== null){
+    const pct = Number(sale.raised * 10000n / HARD_CAP_WEI) / 100;
+    $("raisedNow").textContent = fmtETH(sale.raised);
+    $("meterFill").style.width = Math.min(100, pct) + "%";
+    $("raisedPct").textContent = pct.toFixed(2) + "% of the stall limit";
+    $("beam").style.transform = "rotate(" + (Math.min(100, pct) / 100 * 7 - 3.5).toFixed(2) + "deg)";
+    $("scaleCap").textContent = sale.claimOpen
+      ? "The fair has closed — the takings stand mark'd, and coin is weigh'd out to its owners."
+      : "Every coin laid on the counter is chalk'd up on the ledger, in the open.";
+  }
+  updateButtons();
+  if (account) refreshLedger();
+}
+function phase(){
+  const now = Math.floor(Date.now()/1000);
+  if (!deployed) return "setup";
+  if (sale.claimOpen) return "claim";
+  if (now < SALE_START) return "before";
+  if (now <= SALE_END) return "open";
+  return "closed";
+}
+function tickClock(){
+  const p = phase(), now = Math.floor(Date.now()/1000);
+  const L = $("clockLabel"), T = $("clockTime"), P = $("clockPhase");
+  function fmt(s){
+    if (s < 0) s = 0;
+    const d = Math.floor(s/86400), h = Math.floor(s%86400/3600), m = Math.floor(s%3600/60), ss = s%60;
+    return (d ? d + "d " : "") + String(h).padStart(2,"0") + ":" + String(m).padStart(2,"0") + ":" + String(ss).padStart(2,"0");
+  }
+  if (p === "setup"){ L.textContent = "The fair bell rings in"; T.textContent = "—"; P.textContent = "The stall is being built. Come back when the bell rings."; }
+  else if (p === "before"){ L.textContent = "The fair bell rings in"; T.textContent = fmt(SALE_START - now); P.textContent = "The stall opens soon. Have your ETH ready."; }
+  else if (p === "open"){ L.textContent = "The fair closes in"; T.textContent = fmt(SALE_END - now); P.textContent = "The stall is open — weigh in while there is room under the limit."; }
+  else if (p === "closed"){ L.textContent = "The fair has closed"; T.textContent = "00:00:00"; P.textContent = "Sales are done. Claims open the moment the stall is stocked with coin."; }
+  else { L.textContent = "Claims are open"; T.textContent = "Collect"; P.textContent = "Bring your ledger line to the counter and collect your LOX."; }
+  updateButtons();
+}
+function updateButtons(){
+  const p = phase();
+  $("buyBtn").disabled = !(account && p === "open");
+  $("claimBtn").disabled = !(account && p === "claim");
+}
+
+// ---- buy input quote ----
+$("ethInput").addEventListener("input", () => {
+  const v = parseETH($("ethInput").value);
+  $("loxOut").textContent = v === null ? "0 LOX" : fmtLOX(v * RATE);
+});
+
+// ---- wallet connection ----
+async function ensureChain(prov){
+  const cid = await prov.request({ method: "eth_chainId" });
+  if (cid === CHAIN_HEX) return;
+  try{
+    await prov.request({ method: "wallet_switchEthereumChain", params: [{ chainId: CHAIN_HEX }] });
+  }catch(e){
+    await prov.request({ method: "wallet_addEthereumChain", params: [{
+      chainId: CHAIN_HEX, chainName: "Robinhood Chain",
+      nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
+      rpcUrls: [RPC_URL], blockExplorerUrls: [EXPLORER]
+    }] });
+  }
+}
+async function finishConnect(prov, accs){
+  provider = prov; account = accs[0];
+  await ensureChain(prov);
+  $("ledWallet").textContent = account.slice(0, 8) + "…" + account.slice(-6);
+  $("connectBtn").textContent = "Connected";
+  $("wcBtn").textContent = "Connected";
+  $("connectBtn").disabled = true; $("wcBtn").disabled = true;
+  refreshLedger(); updateButtons();
+}
+$("connectBtn").onclick = async () => {
+  const m = $("ledMsg");
+  if (!window.ethereum){ m.className = "msg err"; m.textContent = "No wallet in this browser — use the WalletConnect button instead."; return; }
+  try{
+    const accs = await window.ethereum.request({ method: "eth_requestAccounts" });
+    if (!accs.length) throw new Error("no account");
+    await finishConnect(window.ethereum, accs);
+    m.className = "msg ok"; m.textContent = "Wallet chalked into the ledger.";
+  }catch(e){ m.className = "msg err"; m.textContent = "Connection failed: " + (e.message || e); }
+};
+// WalletConnect — proven pattern: load the UMD library lazily, init, connect() before any request.
+function loadScript(url, timeoutMs){
+  return new Promise((resolve, reject) => {
+    const s = document.createElement("script");
+    const t = setTimeout(() => { s.remove(); reject(new Error("timeout")); }, timeoutMs);
+    s.src = url; s.async = true;
+    s.onload = () => { clearTimeout(t); resolve(); };
+    s.onerror = () => { clearTimeout(t); s.remove(); reject(new Error("load failed")); };
+    document.body.appendChild(s);
+  });
+}
+const WC_URLS = [
+  "https://unpkg.com/@walletconnect/ethereum-provider@2.21.0/dist/index.umd.js",
+  "https://cdn.jsdelivr.net/npm/@walletconnect/ethereum-provider@2.21.0/dist/index.umd.js"
+];
+function wcCtor(){
+  if (window.EthereumProvider) return window.EthereumProvider;
+  const ns = window["@walletconnect/ethereum-provider"];
+  return (ns && ns.EthereumProvider) ? ns.EthereumProvider : null;
+}
+$("wcBtn").onclick = async () => {
+  const m = $("ledMsg"), btn = $("wcBtn");
+  try{
+    btn.disabled = true; btn.textContent = "Loading WalletConnect…";
+    if (!wcCtor()){
+      let ok = false;
+      for (let i = 0; i < WC_URLS.length && !ok; i++){
+        try{ await loadScript(WC_URLS[i], 20000); ok = !!wcCtor(); }catch(e){}
+      }
+      if (!ok) throw new Error("the WalletConnect library could not be loaded — check your connection");
+    }
+    btn.textContent = "Opening WalletConnect…";
+    const prov = await wcCtor().init({
+      projectId: WC_PROJECT_ID, chains: [CHAIN_ID], showQrModal: true,
+      metadata: { name: "Loxley Presale", description: "The Sherwood Fair presale of LOXLEY (LOX) on Robinhood Chain",
+        url: "https://loxley.work.gd", icons: [] }
+    });
+    await prov.connect();
+    const accs = (prov.accounts && prov.accounts.length) ? prov.accounts
+      : await prov.request({ method: "eth_accounts" });
+    if (!accs || !accs.length) throw new Error("WalletConnect returned no account");
+    await finishConnect(prov, accs);
+    m.className = "msg ok"; m.textContent = "Wallet chalked into the ledger.";
+  }catch(e){
+    m.className = "msg err"; m.textContent = "WalletConnect failed: " + (e.message || e);
+    btn.textContent = "WalletConnect"; btn.disabled = false;
+  }
+};
+
+// ---- ledger for the connected wallet ----
+async function refreshLedger(){
+  if (!account || !deployed) return;
+  const paid = await rpcCall(PRESALE_ADDRESS, SEL.contributed + padAddr(account));
+  const alloc = await rpcCall(PRESALE_ADDRESS, SEL.allocationOf + padAddr(account));
+  const done = await rpcCall(PRESALE_ADDRESS, SEL.claimed + padAddr(account));
+  if (paid) $("ledPaid").textContent = fmtETH(word(paid, 0));
+  if (alloc) $("ledAlloc").textContent = fmtLOX(word(alloc, 0));
+  if (done) $("ledClaimed").textContent = word(done, 0) === 1n ? "yes — coin collected" : "not yet";
+}
+
+// ---- buy + claim ----
+$("buyBtn").onclick = async () => {
+  const v = parseETH($("ethInput").value);
+  if (v === null) return stallMsg("Write an amount in ETH first — numbers only.", false);
+  if (v < MIN_WEI) return stallMsg("Too light: the smallest weight is 0.005 ETH.", false);
+  if (v > MAX_WEI) return stallMsg("Too heavy for one purse: the most is 0.2 ETH per wallet.", false);
+  try{
+    stallMsg("Sending your ETH to the stall…", true);
+    const tx = await provider.request({ method: "eth_sendTransaction",
+      params: [{ from: account, to: PRESALE_ADDRESS, data: SEL.buy, value: "0x" + v.toString(16) }] });
+    stallMsg("Paid in. Transaction " + tx.slice(0, 14) + "… — your LOX is on the ledger.", true);
+    setTimeout(refreshSale, 2500);
+  }catch(e){ stallMsg("The stall refused the coin: " + (e.message || e), false); }
+};
+$("claimBtn").onclick = async () => {
+  try{
+    stallMsg("Weighing out your coin…", true);
+    const tx = await provider.request({ method: "eth_sendTransaction",
+      params: [{ from: account, to: PRESALE_ADDRESS, data: SEL.claim }] });
+    stallMsg("Coin collected. Transaction " + tx.slice(0, 14) + "…", true);
+    setTimeout(refreshLedger, 2500);
+  }catch(e){ stallMsg("Collection failed: " + (e.message || e), false); }
+};
+
+// ---- plaque ----
+if (deployed){
+  $("presaleAddr").textContent = PRESALE_ADDRESS;
+  $("tokenAddr").textContent = TOKEN_ADDRESS.toLowerCase() !== ZERO ? TOKEN_ADDRESS : "not yet struck";
+}
+$("copyBtn").onclick = async () => {
+  const m = $("plaqueMsg");
+  if (!deployed){ m.className = "msg err"; m.textContent = "There is nothing to copy yet — the stall is not built."; return; }
+  try{
+    await navigator.clipboard.writeText(PRESALE_ADDRESS);
+    m.className = "msg ok"; m.textContent = "Copied. Compare it letter for letter wherever you paste it.";
+  }catch(e){ m.className = "msg err"; m.textContent = "Copy failed — select the address above and copy it by hand."; }
+};
+
+// ---- boot ----
+tickClock();
+setInterval(tickClock, 1000);
+refreshSale();
+setInterval(refreshSale, 20000);
+</script>
+</body>
+</html>
